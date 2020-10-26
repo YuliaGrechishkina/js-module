@@ -118,7 +118,83 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
+document.getElementById("SayYourName").onclick = function SayYourName() {
+  var name = prompt("Ваше имя?", "");
+  alert('Привет,' + name);
+};
 
+document.getElementById("SayYourBthYear").onclick = function SayYourBthYear() {
+  var today = 2020;
+  var BthYear = prompt("Ваш год рождения?");
+  var age = today - BthYear;
+  alert('Вам' + age);
+};
+
+document.getElementById("SquareSide").onclick = function SquareSide() {
+  var SquareSide = prompt("Сторона квадрата?", "");
+  var perimeter = SquareSide * 4;
+  alert('Периметр квадрата' + perimeter);
+};
+
+document.getElementById("CircleRadius").onclick = function CircleRadius() {
+  var CircleRadius = prompt("Радиус окружности?", "");
+  var CircleArea = 3.14 * (CircleRadius * CircleRadius);
+  alert('Радиус окружности' + CircleArea);
+};
+
+document.getElementById("Travel").onclick = function Travel() {
+  var distance = prompt("Расстояние в км между двумя городами?", "");
+  var hours = prompt("За сколько часов зотите добраться?", "");
+  var speed = distance / hours;
+  alert('Если хотите успеть вовремя,едьте со скоростью' + distance + 'км в час');
+};
+
+document.getElementById("CurrencyConverter").onclick = function CurrencyConverter() {
+  var crossCourse = 0.85;
+  var USD = prompt("Введите сумму в долл. США");
+  var EURO = USD * crossCourse;
+  alert('За Ваши доллары Вы можете получить' + EURO + 'евро');
+};
+
+document.getElementById("largeFlashDrive").onclick = function largeFlashDrive() {
+  var largeFlashDrive = prompt("Объем Вашей флешкив Гб?", "");
+  var fileSize = 820;
+  var numberFiles = largeFlashDrive * 1000 / fileSize;
+  alert('На Вашу флешку поместится' + numberFiles + 'файлов размером в 820 Мб');
+};
+
+document.getElementById("chocolate").onclick = function chocolate() {
+  var money = prompt("Сколько денег вы готовы отдать за шоколад?", "");
+  var price = prompt("А сколько стоит 1 шоколадка?", "");
+  var amount = money / price;
+  var change = money % price;
+
+  if (amount > 1) {
+    alert('Вам хватает на' + amount + 'плитки шоколада');
+  } else {
+    alert("\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0441 \u0442\u0430\u043A\u0438\u043C \u0444\u0438\u043D\u0430\u043D\u0441\u043E\u0432\u044B\u043C \u0441\u043E\u0441\u0435\u044F\u043D\u0438\u0435\u043C, \u0412\u044B \u043E\u0441\u0442\u0430\u043D\u0435\u0442\u0435\u0441\u044C \u0431\u0435\u0437 \u0441\u043B\u0430\u0434\u043A\u043E\u0433\u043E");
+  }
+};
+
+document.getElementById("numbers").onclick = function numbers() {
+  var number = prompt("Пожалуйста,ведите трёхзначное число", "");
+  var reverse = 0;
+
+  while (number > 0) {
+    var digit = number % 10;
+    reverse = reverse * 10 + digit;
+    number = parseInt(number / 10);
+  }
+
+  alert("Ваше число наоборот " + reverse);
+};
+
+document.getElementById("deposit").onclick = function deposit() {
+  var deposit = prompt("Пожалуйста,ведите сумму, которую планируете положить на депозит", "");
+  var interestRate = 0.05;
+  var accruedInterest = deposit * interestRate * 61 / 365;
+  alert("\u0421\u0443\u043C\u043C\u0430 \u043D\u0430\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044B\u0445 \u043F\u0440\u043E\u0446\u0435\u043D\u0442\u043E\u0432 \u0437\u0430 2 \u043C\u0435\u0441\u044F\u0446\u0430 \u0441\u043E\u0441\u0442\u0430\u0432\u0438\u0442" + accruedInterest);
+};
 },{}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -147,7 +223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59725" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63464" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
