@@ -118,6 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+
 document.getElementById("SayYourName").onclick = function SayYourName() {
   var name = prompt("Ваше имя?", "");
   alert('Привет,' + name);
@@ -182,8 +184,8 @@ document.getElementById("numbers").onclick = function numbers() {
 
   while (number > 0) {
     var digit = number % 10;
-    reverse = reverse * 10 + digit;
-    number = parseInt(number / 10);
+    reverse = (_readOnlyError("reverse"), reverse * 10 + digit);
+    number = (_readOnlyError("number"), parseInt(number / 10));
   }
 
   alert("Ваше число наоборот " + reverse);
@@ -192,7 +194,7 @@ document.getElementById("numbers").onclick = function numbers() {
 document.getElementById("deposit").onclick = function deposit() {
   var deposit = prompt("Пожалуйста,ведите сумму, которую планируете положить на депозит", "");
   var interestRate = 0.05;
-  var accruedInterest = deposit * interestRate * 61 / 365;
+  var accruedInterest = deposit * interestRate * 61 / 365.242;
   alert("\u0421\u0443\u043C\u043C\u0430 \u043D\u0430\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044B\u0445 \u043F\u0440\u043E\u0446\u0435\u043D\u0442\u043E\u0432 \u0437\u0430 2 \u043C\u0435\u0441\u044F\u0446\u0430 \u0441\u043E\u0441\u0442\u0430\u0432\u0438\u0442" + accruedInterest);
 };
 },{}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -223,7 +225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51058" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55503" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
