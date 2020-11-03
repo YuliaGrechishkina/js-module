@@ -120,50 +120,59 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"index.js":[function(require,module,exports) {
 function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
+//Основы JS
+//Запросите у пользователя его имя и выведите в ответ: «Привет, его имя!».
 document.getElementById("SayYourName").onclick = function SayYourName() {
   var name = prompt("Ваше имя?", "");
   alert("Привет, " + name);
-};
+}; //Запросите у пользователя год его рождения, посчитайте, сколько ему лет и выведите результат. Текущий год укажите в коде как константу.
+
 
 document.getElementById("SayYourBthYear").onclick = function SayYourBthYear() {
   var today = 2020;
   var BthYear = prompt("Ваш год рождения?");
   var age = today - BthYear;
   alert("Вам " + age);
-};
+}; //Запросите у пользователя длину стороны квадрата и выведите периметр такого квадрата.
+
 
 document.getElementById("SquareSide").onclick = function SquareSide() {
   var SquareSide = prompt("Сторона квадрата?", "");
   var perimeter = SquareSide * 4;
   alert("Периметр квадрата " + perimeter);
-};
+}; //Запросите у пользователя радиус окружности и выведите площадь такой окружности.
+
 
 document.getElementById("CircleRadius").onclick = function CircleRadius() {
   var CircleRadius = prompt("Радиус окружности?", "");
   var CircleArea = 3.1415926535 * (CircleRadius * CircleRadius);
   alert("Радиус окружности " + CircleArea);
-};
+}; //Запросите у пользователя расстояние в км между двумя городами и за сколько часов он хочет добраться. Посчитайте скорость, с которой необходимо двигаться, чтобы успеть вовремя.
+
 
 document.getElementById("Travel").onclick = function Travel() {
   var distance = prompt("Расстояние в км между двумя городами?", "");
   var hours = prompt("За сколько часов зотите добраться?", "");
   var speed = distance / hours;
   alert("Если хотите успеть вовремя,едьте со скоростью " + distance + " км в час");
-};
+}; //Реализуйте конвертор валют. Пользователь вводит доллары, программа переводит в евро. Курс валюты храните в константе.
+
 
 document.getElementById("CurrencyConverter").onclick = function CurrencyConverter() {
   var crossCourse = 0.85;
   var USD = prompt("Введите сумму в долл. США");
   var EURO = USD * crossCourse;
   alert("За Ваши доллары Вы можете получить " + EURO + " евро");
-};
+}; //Пользователь указывает объем флешки в Гб. Программа должна посчитать, сколько файлов размером в 820 Мб помещается на флешку.
+
 
 document.getElementById("largeFlashDrive").onclick = function largeFlashDrive() {
   var largeFlashDrive = prompt("Объем Вашей флешкив Гб?", "");
   var fileSize = 820;
   var numberFiles = largeFlashDrive * 1000 / fileSize;
   alert("На Вашу флешку поместится " + numberFiles + " файлов размером в 820 Мб");
-};
+}; //Пользователь вводит сумму денег в кошельке и цену одной шоколадки. Программа выводит, сколько шоколадок может купить пользователь, и сколько сдачи у него останется.
+
 
 document.getElementById("chocolate").onclick = function chocolate() {
   var money = prompt("Сколько денег вы готовы отдать за шоколад?", "");
@@ -176,7 +185,8 @@ document.getElementById("chocolate").onclick = function chocolate() {
   } else {
     alert("К сожалению, с таким финансовым сосеянием, Вы останетесь без сладкого");
   }
-};
+}; //Запросите у пользователя трехзначное число и выведите его задом наперед. Для решения задачи вам понадобится оператор % (остаток от деления).
+
 
 document.getElementById("numbers").onclick = function numbers() {
   var number = prompt("Пожалуйста,ведите трёхзначное число", "");
@@ -189,7 +199,8 @@ document.getElementById("numbers").onclick = function numbers() {
   }
 
   alert("Ваше число наоборот " + reverse);
-};
+}; //Пользователь вводит сумму вклада в банк на 2 месяца, с процентной ставкой депозита 5% годовых. Вывести сумму начисленных процентов.
+
 
 document.getElementById("deposit").onclick = function deposit() {
   var deposit = prompt("Пожалуйста,ведите сумму, которую планируете положить на депозит", "");
@@ -197,6 +208,8 @@ document.getElementById("deposit").onclick = function deposit() {
   var accruedInterest = deposit * interestRate * 61 / 365.242;
   alert("Сумма начисленных процентов за 2 месяца составит " + accruedInterest);
 }; //////////////////////////////////////////////////
+//Types
+//Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
 
 
 document.getElementById("age").onclick = function age() {
@@ -213,7 +226,8 @@ document.getElementById("age").onclick = function age() {
   } else if (age >= 60) {
     alert("Вы пенсионер");
   }
-};
+}; //Запросить у пользователя число и вывести ему спецсимвол, который расположен на этой клавише (1–!, 2–@, 3–# и т. д).
+
 
 document.getElementById("guessTheNumber").onclick = function guessTheNumber() {
   var number = prompt("Введите число от 0  до 9", 0);
@@ -259,7 +273,8 @@ document.getElementById("guessTheNumber").onclick = function guessTheNumber() {
       alert("спецсимвол, который расположен на этой клавише (");
       break;
   }
-};
+}; //Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
+
 
 document.getElementById("threeDigitNumber").onclick = function threeDigitNumber() {
   var threeDigitNumber = prompt("Введите трехзначное число", "");
@@ -267,7 +282,8 @@ document.getElementById("threeDigitNumber").onclick = function threeDigitNumber(
   var threeDigitNumber2 = parseInt(threeDigitNumber / 10) % 10;
   var threeDigitNumber3 = threeDigitNumber % 10;
   if (threeDigitNumber1 === threeDigitNumber2 || threeDigitNumber2 === threeDigitNumber3 || threeDigitNumber1 === threeDigitNumber3) alert("Найдено совпадение цифр");else alert("cовпадений не найдено");
-};
+}; //Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100.
+
 
 document.getElementById("leapYear").onclick = function leapYear() {
   var year = prompt("Введите год", "");
@@ -281,7 +297,8 @@ document.getElementById("leapYear").onclick = function leapYear() {
   }
 
   alert("Год  " + year + " не високосный");
-};
+}; //Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
+
 
 document.getElementById("palindrome").onclick = function palindrome() {
   var str = prompt("Введите число", "");
@@ -295,7 +312,8 @@ document.getElementById("palindrome").onclick = function palindrome() {
   }
 
   alert('Введённое число ' + str + (pal ? ' ' : ' не ') + 'является палиндромом');
-};
+}; // Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.
+
 
 document.getElementById("CurrenciesConverter").onclick = function CurrenciesConverter() {
   var USD = prompt("Введите сумму в долл. США");
@@ -314,7 +332,8 @@ document.getElementById("CurrenciesConverter").onclick = function CurrenciesConv
       alert("За Ваши " + "USD" + " Вы получите " + USD * 1.70 + " AZN ");
       break;
   }
-};
+}; //Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
+
 
 document.getElementById("discount").onclick = function discount() {
   var purchaseAmount = prompt("Введите сумму покупки");
@@ -328,7 +347,8 @@ document.getElementById("discount").onclick = function discount() {
   } else if (purchaseAmount >= 500) {
     alert("Ваша скидка = 7%. " + " Сумма к оплате " + (purchaseAmount - purchaseAmount * 0.07));
   }
-};
+}; //Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
+
 
 document.getElementById("geometry").onclick = function geometry() {
   var circumFerence = prompt("Введите длину окружности");
@@ -341,7 +361,8 @@ document.getElementById("geometry").onclick = function geometry() {
   } else if (circleRadius > squareSide / 2) {
     alert("Такая окружность  не поместится в указанный квадрат");
   }
-};
+}; //Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
+
 
 document.getElementById("interview").onclick = function interview() {
   var firstQuestion = prompt("Куда на курортных пляжах просят не заплывать отдыхающих? 1 - За горизонт. 2 -  За буйки. 3 - В камыши.");
@@ -357,7 +378,8 @@ document.getElementById("interview").onclick = function interview() {
   if (secondQuestion == 3) score += 2;
   if (thirdQuestion == 1) score += 2;
   alert("Поздравляем, Вы набрали " + score + " баллов");
-};
+}; //Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.
+
 
 document.getElementById("сalendar").onclick = function сalendar() {
   var date = prompt("Введите дату (день - месяц - год)");
@@ -365,7 +387,57 @@ document.getElementById("сalendar").onclick = function сalendar() {
   var oldDate = new Date(date[2], date[1] - 1, date[0]);
   oldDate.setDate(oldDate.getDate() + 1);
   alert(oldDate);
-};
+}; //////////////////////////////////////////////////////////////////////////////
+//Cycles
+//Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+
+
+document.getElementById("calculateAmount").onclick = function calculateAmount() {
+  var rangeStart = +prompt("Введите первое число диапазона");
+  var rangeEnd = +prompt("Введите последнее число диапазона");
+  var sum = 0;
+
+  while (rangeStart <= rangeEnd) {
+    sum += rangeStart;
+    rangeStart++;
+  }
+
+  alert("Сумма всех чисел диапазона равна " + sum);
+}; //Запросить 2 числа и найти только наибольший общий делитель.
+
+
+document.getElementById("commonDivisor").onclick = function commonDivisor() {
+  var firstNumber = +prompt("Введите первое число");
+  var secondNumber = +prompt("Введите второе число");
+  if (firstNumber == 0) ;
+  alert(secondNumber);
+
+  while (secondNumber != 0) {
+    if (firstNumber > secondNumber) firstNumber = (_readOnlyError("firstNumber"), firstNumber - secondNumber);else secondNumber = (_readOnlyError("secondNumber"), secondNumber - firstNumber);
+  }
+
+  alert("Наибольший общий делитель " + firstNumber);
+}; //Запросить у пользователя число и вывести все делители этого числа.
+
+
+document.getElementById("allDivisors").onclick = function allDivisors() {
+  var insertNumber = +prompt("Введите число");
+  var i = 0;
+
+  while (i++ <= insertNumber) {
+    if (insertNumber % i == 0) alert("Делители этого числа " + i);
+  }
+}; //Определить количество цифр в введенном числе.
+
+
+document.getElementById("numberDigits").onclick = function numberDigits() {
+  var yourNumber = prompt("Введите число", "");
+  var length = yourNumber.length;
+  alert("Количество цифр в введенном числе " + length);
+}; //Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных.
+
+
+document.getElementById("mathTricks").onclick = function mathTrickss() {};
 },{}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -394,7 +466,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60521" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50795" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
