@@ -437,7 +437,63 @@ document.getElementById("numberDigits").onclick = function numberDigits() {
 }; //Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных.
 
 
-document.getElementById("mathTricks").onclick = function mathTrickss() {};
+document.getElementById("mathTricks").onclick = function mathTrickss() {
+  var zero = 0;
+  var posNumber = 0;
+  var negNumber = 0;
+  var evenNumber = 0;
+  var oddNumber = 0;
+
+  for (var i = 1; i <= 10; i++) {
+    var yourNumber = +prompt("Введите число: ");
+
+    if (yourNumber > 0) {
+      posNumber += 1;
+    } else if (yourNumber < 0) {
+      negNumber++;
+    } else if (yourNumber == 0) {
+      zero += 1;
+    }
+
+    if (yourNumber % 2 == 0) {
+      evenNumber += 1;
+    } else {
+      oddNumber += 1;
+    }
+  }
+
+  alert("Колличество введенных нулей: " + zero + " Колличество введенных положительных чисел: " + posNumber + " Колличество введенных отрицательных чисел: " + negNumber + " Колличество введенных четных чисел: " + evenNumber + " Колличество введенных нечетных чисел: " + oddNumber);
+}; //Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. <br> И так до тех пор, пока пользователь не откажется.
+
+
+document.getElementById("LoopCalculator").onclick = function LoopCalculator() {
+  while (true) {
+    var firstNumber = +prompt("Введите первое число", "");
+    var arithmeticOperation = prompt("Введите арифметическое действие: +,-,*,/", "");
+    var secondNumber = +prompt("Введите второе число", "");
+
+    if (arithmeticOperation == "+") {
+      result = firstNumber + secondNumber;
+    } else if (arithmeticOperation == "-") {
+      result = firstNumber - secondNumber;
+    } else if (arithmeticOperation == "*") {
+      result = firstNumber * secondNumber;
+    } else if (arithmeticOperation == "/") {
+      result = firstNumber / secondNumber;
+    }
+
+    alert(firstNumber + arithmeticOperation + secondNumber + " = " + result);
+    if (!confirm('Хотите ли вы решить еще один пример?')) break;
+  }
+}; //Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
+
+
+document.getElementById("shiftNumbers").onclick = function shiftNumbers() {
+  var number = +prompt("Введите число", "");
+  var move = +prompt("На сколько цифр нужно сдвинуть введенное число", "");
+  var result = number.slice(move) + number.slice(0, move);
+  alert(result);
+};
 },{}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -466,7 +522,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50795" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50736" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
