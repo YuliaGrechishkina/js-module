@@ -117,16 +117,166 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-/*import { basicsHomework } from "/basics.js";
+})({"cycles.js":[function(require,module,exports) {
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
-import { typesHomework } from "/types.js";
+//export const cyclesHomework = () => {
+//Cycles
+//Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+document.getElementById("calculateAmount").onclick = function calculateAmount() {
+  var rangeStart = +prompt("Введите первое число диапазона");
+  var rangeEnd = +prompt("Введите последнее число диапазона");
+  var sum = 0;
 
-import { cyclesHomework } from "/cycles.js";
+  while (rangeStart <= rangeEnd) {
+    sum += rangeStart;
+    rangeStart++;
+  }
 
-basicsHomework();
-typesHomework();
-cyclesHomework();*/
+  alert("\u0421\u0443\u043C\u043C\u0430 \u0432\u0441\u0435\u0445 \u0447\u0438\u0441\u0435\u043B \u0434\u0438\u0430\u043F\u0430\u0437\u043E\u043D\u0430 \u0440\u0430\u0432\u043D\u0430 ".concat(sum));
+}; //Запросить 2 числа и найти только наибольший общий делитель.
+
+
+document.getElementById("commonDivisor").onclick = function commonDivisor() {
+  var firstNumber = +prompt("Введите первое число");
+  var secondNumber = +prompt("Введите второе число");
+  if (firstNumber == 0) ;
+  alert(secondNumber);
+
+  while (secondNumber != 0) {
+    if (firstNumber > secondNumber) firstNumber = (_readOnlyError("firstNumber"), firstNumber - secondNumber);else secondNumber = (_readOnlyError("secondNumber"), secondNumber - firstNumber);
+  }
+
+  alert("\u041D\u0430\u0438\u0431\u043E\u043B\u044C\u0448\u0438\u0439 \u043E\u0431\u0449\u0438\u0439 \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u044C ".concat(firstNumber));
+}; //Запросить у пользователя число и вывести все делители этого числа.
+
+
+document.getElementById("allDivisors").onclick = function allDivisors() {
+  var insertNumber = +prompt("Введите число");
+  var i = 0;
+
+  while (i++ <= insertNumber) {
+    if (insertNumber % i == 0) alert("\u0414\u0435\u043B\u0438\u0442\u0435\u043B\u0438 \u044D\u0442\u043E\u0433\u043E \u0447\u0438\u0441\u043B\u0430 ".concat(i));
+  }
+}; //Определить количество цифр в введенном числе.
+
+
+document.getElementById("numberDigits").onclick = function numberDigits() {
+  var yourNumber = prompt("Введите число", "");
+  var length = yourNumber.length;
+  alert("\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0446\u0438\u0444\u0440 \u0432 \u0432\u0432\u0435\u0434\u0435\u043D\u043D\u043E\u043C \u0447\u0438\u0441\u043B\u0435 ".concat(length));
+}; //Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных.
+
+
+document.getElementById("mathTricks").onclick = function mathTrickss() {
+  var zero = 0;
+  var posNumber = 0;
+  var negNumber = 0;
+  var evenNumber = 0;
+  var oddNumber = 0;
+
+  for (var i = 1; i <= 10; i++) {
+    var yourNumber = +prompt("Введите число: ");
+
+    if (yourNumber > 0) {
+      posNumber += 1;
+    } else if (yourNumber < 0) {
+      negNumber++;
+    } else if (yourNumber == 0) {
+      zero += 1;
+    }
+
+    if (yourNumber % 2 == 0) {
+      evenNumber += 1;
+    } else {
+      oddNumber += 1;
+    }
+  }
+
+  alert("\u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0445 \u043D\u0443\u043B\u0435\u0439: ".concat(zero, " \n        \u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0445 \u043F\u043E\u043B\u043E\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B: ").concat(posNumber, " \n        \u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0445 \u043E\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B: ").concat(negNumber, " \n        \u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0445 \u0447\u0435\u0442\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B: ").concat(evenNumber, " \n        \u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0445 \u043D\u0435\u0447\u0435\u0442\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B: ").concat(oddNumber));
+}; //Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. <br> И так до тех пор, пока пользователь не откажется.
+
+
+document.getElementById("LoopCalculator").onclick = function LoopCalculator() {
+  while (true) {
+    var firstNumber = +prompt("Введите первое число", "");
+    var arithmeticOperation = prompt("Введите арифметическое действие: +,-,*,/", "");
+    var secondNumber = +prompt("Введите второе число", "");
+
+    if (arithmeticOperation == "+") {
+      result = firstNumber + secondNumber;
+    } else if (arithmeticOperation == "-") {
+      result = firstNumber - secondNumber;
+    } else if (arithmeticOperation == "*") {
+      result = firstNumber * secondNumber;
+    } else if (arithmeticOperation == "/") {
+      result = firstNumber / secondNumber;
+    }
+
+    alert(firstNumber + arithmeticOperation + secondNumber + " = " + result);
+    if (!confirm("Хотите ли вы решить еще один пример?")) break;
+  }
+}; //Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
+
+
+document.getElementById("shiftNumbers").onclick = function shiftNumbers() {
+  var nubmer = prompt("Введите число", "");
+  var move = +prompt("На сколько цифр нужно сдвинуть введенное число", "");
+  alert(nubmer.slice(move).concat(nubmer.slice(0, move)));
+}; //Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
+
+
+document.getElementById("LoopDays").onclick = function LoopDays() {
+  var days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+  var currDay = 0;
+
+  while (confirm("".concat(days[currDay], ". \u0425\u043E\u0442\u0438\u0442\u0435 \u0443\u0432\u0438\u0434\u0435\u0442\u044C \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0434\u0435\u043D\u044C?"))) {
+    currDay = (currDay + 1) % days.length;
+  }
+}; //Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.
+
+
+document.getElementById("multiplicationTable").onclick = function multiplicationTable() {
+  do {
+    var a = 1;
+    var b = 9;
+
+    var _check = b - a;
+
+    if (_check >= 0) {
+      for (var c = a; c <= b; c++) {
+        for (var d = 1; d <= 10; d++) {
+          document.write("<br>" + c + " x " + d + " = " + c * d);
+        }
+
+        document.write("<p>");
+      }
+    } else {
+      alert("First number is higher than the second, PLease try again.");
+    }
+  } while (check < 0);
+}; //Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его
+
+
+document.getElementById("GuessNumber").onclick = function GuessNumber() {
+  alert("Загадайте число от 1 до 100");
+  var minNumber = 0;
+  var maxNumber = 100;
+
+  while (guessNumber) {
+    var N = minNumber + (maxNumber - minNumber) / 2;
+
+    var _guessNumber = prompt("\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E >, < \u0438\u043B\u0438 = ".concat(N));
+
+    if (_guessNumber == "<") {
+      maxNumber = N - 1;
+    } else if (_guessNumber == ">") {
+      minNumber = N + 1;
+    } else if (_guessNumber == "=") {
+      alert("\u0418\u0433\u0440\u0430 \u043E\u043A\u043E\u043D\u0447\u0435\u043D\u0430. \u0412\u044B \u0437\u0430\u0433\u0430\u0434\u0430\u043B\u0438 \u0447\u0438\u0441\u043B\u043E ".concat(N));
+    }
+  }
+}; //};
 },{}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -331,5 +481,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/js-module-cobra.e31bb0bc.js.map
+},{}]},{},["../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","cycles.js"], null)
+//# sourceMappingURL=/cycles.87470b7e.js.map

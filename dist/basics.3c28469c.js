@@ -117,16 +117,97 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-/*import { basicsHomework } from "/basics.js";
+})({"basics.js":[function(require,module,exports) {
+//export const basicsHomework = () => {
+//Основы JS
+//Запросите у пользователя его имя и выведите в ответ: «Привет, его имя!».
+document.getElementById("SayYourName").onclick = function SayYourName() {
+  var name = prompt("Ваше имя?", "");
+  alert("\u041F\u0440\u0438\u0432\u0435\u0442, ".concat(name, "!"));
+}; //Запросите у пользователя год его рождения, посчитайте, сколько ему лет и выведите результат. Текущий год укажите в коде как константу.
 
-import { typesHomework } from "/types.js";
 
-import { cyclesHomework } from "/cycles.js";
+document.getElementById("SayYourBthYear").onclick = function SayYourBthYear() {
+  var today = 2020;
+  var BthYear = prompt("Ваш год рождения?");
+  var age = today - BthYear;
+  alert("\u0412\u0430\u043C ".concat(age));
+}; //Запросите у пользователя длину стороны квадрата и выведите периметр такого квадрата.
 
-basicsHomework();
-typesHomework();
-cyclesHomework();*/
+
+document.getElementById("SquareSide").onclick = function SquareSide() {
+  var SquareSide = prompt("Сторона квадрата?", "");
+  var perimeter = SquareSide * 4;
+  alert("\u041F\u0435\u0440\u0438\u043C\u0435\u0442\u0440 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0430 ".concat(perimeter));
+}; //Запросите у пользователя радиус окружности и выведите площадь такой окружности.
+
+
+document.getElementById("CircleRadius").onclick = function CircleRadius() {
+  var CircleRadius = prompt("Радиус окружности?", "");
+  var CircleArea = 3.1415926535 * (CircleRadius * CircleRadius);
+  alert("\u0420\u0430\u0434\u0438\u0443\u0441 \u043E\u043A\u0440\u0443\u0436\u043D\u043E\u0441\u0442\u0438 ".concat(CircleArea));
+}; //Запросите у пользователя расстояние в км между двумя городами и за сколько часов он хочет добраться. Посчитайте скорость, с которой необходимо двигаться, чтобы успеть вовремя.
+
+
+document.getElementById("Travel").onclick = function Travel() {
+  var distance = prompt("Расстояние в км между двумя городами?", "");
+  var hours = prompt("За сколько часов зотите добраться?", "");
+  var speed = distance / hours;
+  alert("\u0415\u0441\u043B\u0438 \u0445\u043E\u0442\u0438\u0442\u0435 \u0443\u0441\u043F\u0435\u0442\u044C \u0432\u043E\u0432\u0440\u0435\u043C\u044F,\u0435\u0434\u044C\u0442\u0435 \u0441\u043E \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C\u044E ".concat(distance, " \u043A\u043C \u0432 \u0447\u0430\u0441"));
+}; //Реализуйте конвертор валют. Пользователь вводит доллары, программа переводит в евро. Курс валюты храните в константе.
+
+
+document.getElementById("CurrencyConverter").onclick = function CurrencyConverter() {
+  var crossCourse = 0.85;
+  var USD = prompt("Введите сумму в долл. США");
+  var EURO = USD * crossCourse;
+  alert("\u0417\u0430 \u0412\u0430\u0448\u0438 \u0434\u043E\u043B\u043B\u0430\u0440\u044B \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C ".concat(EURO, " \u0435\u0432\u0440\u043E"));
+}; //Пользователь указывает объем флешки в Гб. Программа должна посчитать, сколько файлов размером в 820 Мб помещается на флешку.
+
+
+document.getElementById("largeFlashDrive").onclick = function largeFlashDrive() {
+  var largeFlashDrive = prompt("Объем Вашей флешкив Гб?", "");
+  var fileSize = 820;
+  var numberFiles = largeFlashDrive * 1000 / fileSize;
+  alert("\u041D\u0430 \u0412\u0430\u0448\u0443 \u0444\u043B\u0435\u0448\u043A\u0443 \u043F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0441\u044F ".concat(numberFiles, "  \u0444\u0430\u0439\u043B\u043E\u0432 \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u043C \u0432 820 \u041C\u0431"));
+}; //Пользователь вводит сумму денег в кошельке и цену одной шоколадки. Программа выводит, сколько шоколадок может купить пользователь, и сколько сдачи у него останется.
+
+
+document.getElementById("chocolate").onclick = function chocolate() {
+  var money = prompt("Сколько денег вы готовы отдать за шоколад?", "");
+  var price = prompt("А сколько стоит 1 шоколадка?", "");
+  var amount = money / price;
+  var change = money % price;
+
+  if (amount > 1) {
+    alert("\u0412\u0430\u043C \u0445\u0432\u0430\u0442\u0430\u0435\u0442 \u043D\u0430 ".concat(amount, " \u043F\u043B\u0438\u0442\u043A\u0438 \u0448\u043E\u043A\u043E\u043B\u0430\u0434\u0430"));
+  } else {
+    alert("\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0441 \u0442\u0430\u043A\u0438\u043C \u0444\u0438\u043D\u0430\u043D\u0441\u043E\u0432\u044B\u043C \u0441\u043E\u0441\u0435\u044F\u043D\u0438\u0435\u043C, \u0412\u044B \u043E\u0441\u0442\u0430\u043D\u0435\u0442\u0435\u0441\u044C \u0431\u0435\u0437 \u0441\u043B\u0430\u0434\u043A\u043E\u0433\u043E");
+  }
+}; //Запросите у пользователя трехзначное число и выведите его задом наперед. Для решения задачи вам понадобится оператор % (остаток от деления).
+
+
+document.getElementById("numbers").onclick = function numbers() {
+  var number = prompt("Пожалуйста,ведите трёхзначное число", "");
+  var reverse = 0;
+
+  while (number > 0) {
+    var digit = number % 10;
+    reverse = reverse * 10 + digit;
+    number = parseInt(number / 10);
+  }
+
+  alert("\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E \u043D\u0430\u043E\u0431\u043E\u0440\u043E\u0442 ".concat(reverse));
+}; //Пользователь вводит сумму вклада в банк на 2 месяца, с процентной ставкой депозита 5% годовых. Вывести сумму начисленных процентов.
+
+
+document.getElementById("deposit").onclick = function deposit() {
+  var deposit = prompt("Пожалуйста,ведите сумму, которую планируете положить на депозит", "");
+  var interestRate = 0.05;
+  var accruedInterest = deposit * interestRate * 61 / 365.242;
+  alert("\u0421\u0443\u043C\u043C\u0430 \u043D\u0430\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044B\u0445 \u043F\u0440\u043E\u0446\u0435\u043D\u0442\u043E\u0432 \u0437\u0430 2 \u043C\u0435\u0441\u044F\u0446\u0430 \u0441\u043E\u0441\u0442\u0430\u0432\u0438\u0442 ".concat(accruedInterest));
+}; //End
+//};
 },{}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -331,5 +412,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/js-module-cobra.e31bb0bc.js.map
+},{}]},{},["../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","basics.js"], null)
+//# sourceMappingURL=/basics.3c28469c.js.map
