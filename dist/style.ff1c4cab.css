@@ -10,12 +10,13 @@ body {
   min-height: 100vh;
   font-size: 100%;
   font-size: 14px;
+  color: #c5d6c2;
 }
 
 .js-homework {
-  background-image: url(/fon_seryj_abstraktsiya_svetlyj_95691_1280x720.9e751cb2.jpg);
+  background-image: url(/unnamed.53fdf21a.gif);
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   padding: 50px 30px 50px 30px;
   display: flex;
   flex-direction: column;
@@ -35,18 +36,18 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
-  color: #000000;
-  border: #000000 solid 2px;
+  color: #c5d6c2;
+  border: #c5d6c2 solid 2px;
   padding: 5px;
   cursor: pointer;
-  background-color: #9cdbfa;
+  background-color: #0c6307;
   width: 250px;
   text-align: center;
   font-weight: bold;
 }
 
 a:hover {
-  background-color: #b16ccc;
+  background-color: #109306;
 }
 
 .js-module {
@@ -59,6 +60,7 @@ ul {
 
 ul li {
   list-style: none;
+  background-color: rgba(12, 99, 7, 0.5);
 }
 
 h2 {
@@ -66,7 +68,7 @@ h2 {
 }
 
 li {
-  border: 2px solid #000000;
+  border: 2px solid #c5d6c2;
   margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
@@ -79,14 +81,15 @@ li {
 button {
   height: 55px;
   width: 100px;
-  background-color: #9cdbfa;
+  background-color: #109306;
+  color: #c5d6c2;
   cursor: pointer;
   padding: 2px;
-  border: #000000 solid 2px;
+  border: #c5d6c2 solid 2px;
 }
 
 button:hover {
-  background-color: #b16ccc;
+  background-color: #0c6307;
 }
 
 /*# sourceMappingURL=/style.ff1c4cab.css.map */
