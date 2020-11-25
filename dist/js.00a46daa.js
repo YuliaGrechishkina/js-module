@@ -413,7 +413,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.cycles = void 0;
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
 
 var cycles = function cycles() {
   //Cycles
@@ -657,28 +657,155 @@ var functions = function functions() {
 
     alert(yourPerfectNumber(yourNumber));
   }; //Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
+  //В ПРОЦЕССЕ
 
   /*document.getElementById(
-        "PerfectNumberSec"
-    ).onclick = function PerfectNumberSec() {
-        const yourFirstNumber = +prompt("Введите первое число", "");
-        const yourSecondNumber = +prompt("Введите второе число", "");
-        const yourPerfectNumber = (yourFirstNumber) => {
-            let i;
-            let sum = 0;
-            for (i = 1; i < yourFirstNumber; i++) {
-                if (yourFirstNumber % i == 0) {
-                    sum += i;
-                }
+    "PerfectNumberSec"
+  ).onclick = function PerfectNumberSec() {
+    const yourFirstNumber = +prompt("Введите первое число", "");
+    const yourSecondNumber = +prompt("Введите второе число", "");
+    const NumbersArr=[];
+             const yourPerfectNumber = (yourNumber) => {
+        let i;
+        let sum = 0;
+        for (i = 1; i < yourNumber; i++) {
+            if (yourNumber % i == 0) {
+                sum += i;
             }
-            if (sum === yourFirstNumber) {
-                return true;
-            } else if ((sum |= yourFirstNumber)) {
-                return false;
-            }
-        };
-    };*/
+        }
+        if (sum === yourNumber) {
+            return true;
+        } 
+            return false;
+        }
+              
+        
+        const isYourNumberPerfect = (yourFirstNumber,yourFirstNumber) => {
+      let i;
+      let sum = 0;
+      for (i = yourFirstNumber; i < yourFirstNumber; i++) {
+          let result = PerfectNumbers(i)
+          if (result===true){
+              NumbersArr.push(i);
+             alert( `Найдены следующие совершенные числа: ${NumbersArr}`);            
+          
+  };
+  };
+  };
+             };*/
+  //Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».
+  // Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
 
+
+  document.getElementById("clock").onclick = function clock() {
+    var hours = +prompt("Введите время (час)", "");
+
+    while (hours > 23) {
+      alert("\u0412 \u0441\u0443\u0442\u043A\u0430\u0445 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 24 \u0447\u0430\u0441\u043E\u0432");
+      hours = +prompt("Введите время (час)", "");
+    }
+
+    var minut = +prompt("Введите время (минуты)", "");
+
+    while (minut > 59) {
+      alert("\u0412 \u0447\u0430\u0441\u0435 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 60 \u043C\u0438\u043D\u0443\u0442");
+      minut = +prompt("Введите время (минуты)", "");
+    }
+
+    var sec = +prompt("Введите время (секунды)", "");
+
+    while (sec > 59) {
+      alert("\u0412 \u043C\u0438\u043D\u0443\u0442\u0435 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 60 \u0441\u0435\u043A\u0443\u043D\u0434");
+      sec = +prompt("Введите время (секунды)", "");
+    }
+
+    alert("".concat(hours, " : ").concat(minut, " : ").concat(sec));
+  }; //Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
+
+
+  document.getElementById("timeInSeconds").onclick = function timeInSeconds() {
+    var hours = +prompt("Введите время (час)", "");
+
+    while (hours > 23) {
+      alert("\u0412 \u0441\u0443\u0442\u043A\u0430\u0445 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 24 \u0447\u0430\u0441\u043E\u0432");
+      hours = +prompt("Введите время (час)", "");
+    }
+
+    var minut = +prompt("Введите время (минуты)", "");
+
+    while (minut > 59) {
+      alert("\u0412 \u0447\u0430\u0441\u0435 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 60 \u043C\u0438\u043D\u0443\u0442");
+      minut = +prompt("Введите время (минуты)", "");
+    }
+
+    var sec = +prompt("Введите время (секунды)", "");
+
+    while (sec > 59) {
+      alert("\u0412 \u043C\u0438\u043D\u0443\u0442\u0435 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 60 \u0441\u0435\u043A\u0443\u043D\u0434");
+      sec = +prompt("Введите время (секунды)", "");
+    }
+
+    var result = hours * 3600 + minut * 60 + sec;
+    alert("\u042D\u0442\u043E \u0431\u0443\u0434\u0435\u0442 ".concat(result, " \u0441\u0435\u043A\u0443\u043D\u0434"));
+  }; //Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
+
+
+  document.getElementById("time").onclick = function time() {
+    var sec = +prompt("Введите время (секунды)", "");
+    alert(Math.floor(sec / 3600) + " : " + (Math.floor(sec / 60) - Math.floor(sec / 3600) * 60) + " : " + sec % 60);
+  }; //Написать функцию, которая считает разницу между датами. 
+  //Функция принимает 6 параметров, которые описывают 2 даты, b возвращает результат в виде строки «чч:мм:сс». 
+  //При выполнении задания используйте функции из предыдущих 2-х
+
+
+  document.getElementById("timeInterval").onclick = function timeInterval() {
+    var firstHours = +prompt("Введите время (час)", "");
+
+    while (firstHours > 23) {
+      alert("\u0412 \u0441\u0443\u0442\u043A\u0430\u0445 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 24 \u0447\u0430\u0441\u043E\u0432");
+      firstHours = +prompt("Введите время (час)", "");
+    }
+
+    var firsMminut = +prompt("Введите время (минуты)", "");
+
+    while (firsMminut > 59) {
+      alert("\u0412 \u0447\u0430\u0441\u0435 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 60 \u043C\u0438\u043D\u0443\u0442");
+      firsMminut = +prompt("Введите время (минуты)", "");
+    }
+
+    var firstSec = +prompt("Введите время (секунды)", "");
+
+    while (firstSec > 59) {
+      alert("\u0412 \u043C\u0438\u043D\u0443\u0442\u0435 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 60 \u0441\u0435\u043A\u0443\u043D\u0434");
+      firstSec = +prompt("Введите время (секунды)", "");
+    }
+
+    var firstResult = firstHours * 3600 + firsMminut * 60 + firstSec;
+    var secondHours = +prompt("Введите время (час)", "");
+
+    while (firstHours > 23) {
+      alert("\u0412 \u0441\u0443\u0442\u043A\u0430\u0445 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 24 \u0447\u0430\u0441\u043E\u0432");
+      fsecondHours = +prompt("Введите время (час)", "");
+    }
+
+    var secondMminut = +prompt("Введите время (минуты)", "");
+
+    while (secondMminut > 59) {
+      alert("\u0412 \u0447\u0430\u0441\u0435 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 60 \u043C\u0438\u043D\u0443\u0442");
+      secondMminut = +prompt("Введите время (минуты)", "");
+    }
+
+    var secondSec = +prompt("Введите время (секунды)", "");
+
+    while (secondSec > 59) {
+      alert("\u0412 \u043C\u0438\u043D\u0443\u0442\u0435 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u0431\u043E\u043B\u0435\u0435 60 \u0441\u0435\u043A\u0443\u043D\u0434");
+      secondSec = +prompt("Введите время (секунды)", "");
+    }
+
+    var secondResult = secondHours * 3600 + secondMminut * 60 + secondSec;
+    var differenceInSeconds = secondResult - firstResult;
+    alert(Math.floor(differenceInSeconds / 3600) + " : " + (Math.floor(differenceInSeconds / 60) - Math.floor(differenceInSeconds / 3600) * 60) + " : " + differenceInSeconds % 60);
+  };
 };
 
 exports.functions = functions;
@@ -697,7 +824,7 @@ var _functions = require("../js/functions.js");
 (0, _types.types)();
 (0, _cycles.cycles)();
 (0, _functions.functions)();
-},{"../js/basics":"js/basics.js","../js/types.js":"js/types.js","../js/cycles.js":"js/cycles.js","../js/functions.js":"js/functions.js"}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../js/basics":"js/basics.js","../js/types.js":"js/types.js","../js/cycles.js":"js/cycles.js","../js/functions.js":"js/functions.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -725,7 +852,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49648" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54226" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -901,5 +1028,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
+},{}]},{},["../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
 //# sourceMappingURL=/js.00a46daa.js.map
