@@ -9,3 +9,6 @@ cycles();
 
 import { functions } from "../js/functions.js";
 functions();
+
+import { objects } from "../js/objects.js";
+objects();

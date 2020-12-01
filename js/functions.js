@@ -71,40 +71,30 @@ export const functions = () => {
 
     //Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
     //В ПРОЦЕССЕ
-        /*document.getElementById(
+       /* document.getElementById(
           "PerfectNumberSec"
       ).onclick = function PerfectNumberSec() {
           const yourFirstNumber = +prompt("Введите первое число", "");
           const yourSecondNumber = +prompt("Введите второе число", "");
-          const NumbersArr=[];
-                   const yourPerfectNumber = (yourNumber) => {
+        
+                   const yourPerfectNumber = (yourFirstNumber , yourSecondNumber) => {
               let i;
-              let sum = 0;
-              for (i = 1; i < yourNumber; i++) {
-                  if (yourNumber % i == 0) {
+              let sum = 0;  
+              const NumbersArr=[];
+              for (i = yourFirstNumber; i < yourSecondNumber; i++) {
+                  if ((yourSecondNumber-yourFirstNumber) % i == 0) {
                       sum += i;
                   }
               }
-              if (sum === yourNumber) {
+              if (sum === (yourSecondNumber-yourFirstNumber)) {
                   return true;
               } 
                   return false;
               }
-                    
-              
-              const isYourNumberPerfect = (yourFirstNumber,yourFirstNumber) => {
-            let i;
-            let sum = 0;
-            for (i = yourFirstNumber; i < yourFirstNumber; i++) {
-                let result = PerfectNumbers(i)
-                if (result===true){
-                    NumbersArr.push(i);
+    NumbersArr.push(i);
                    alert( `Найдены следующие совершенные числа: ${NumbersArr}`);            
-                
-      };
-    };
-};
-                   };*/
+                    };*/
+
                
 //Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».
 // Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.

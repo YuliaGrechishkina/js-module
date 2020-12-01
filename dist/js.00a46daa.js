@@ -659,40 +659,29 @@ var functions = function functions() {
   }; //Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
   //В ПРОЦЕССЕ
 
-  /*document.getElementById(
-    "PerfectNumberSec"
+  /* document.getElementById(
+     "PerfectNumberSec"
   ).onclick = function PerfectNumberSec() {
-    const yourFirstNumber = +prompt("Введите первое число", "");
-    const yourSecondNumber = +prompt("Введите второе число", "");
-    const NumbersArr=[];
-             const yourPerfectNumber = (yourNumber) => {
-        let i;
-        let sum = 0;
-        for (i = 1; i < yourNumber; i++) {
-            if (yourNumber % i == 0) {
-                sum += i;
-            }
-        }
-        if (sum === yourNumber) {
-            return true;
-        } 
-            return false;
-        }
-              
-        
-        const isYourNumberPerfect = (yourFirstNumber,yourFirstNumber) => {
-      let i;
-      let sum = 0;
-      for (i = yourFirstNumber; i < yourFirstNumber; i++) {
-          let result = PerfectNumbers(i)
-          if (result===true){
-              NumbersArr.push(i);
-             alert( `Найдены следующие совершенные числа: ${NumbersArr}`);            
-          
-  };
-  };
-  };
-             };*/
+     const yourFirstNumber = +prompt("Введите первое число", "");
+     const yourSecondNumber = +prompt("Введите второе число", "");
+   
+              const yourPerfectNumber = (yourFirstNumber , yourSecondNumber) => {
+         let i;
+         let sum = 0;  
+         const NumbersArr=[];
+         for (i = yourFirstNumber; i < yourSecondNumber; i++) {
+             if ((yourSecondNumber-yourFirstNumber) % i == 0) {
+                 sum += i;
+             }
+         }
+         if (sum === (yourSecondNumber-yourFirstNumber)) {
+             return true;
+         } 
+             return false;
+         }
+  NumbersArr.push(i);
+              alert( `Найдены следующие совершенные числа: ${NumbersArr}`);            
+               };*/
   //Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».
   // Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
 
@@ -809,6 +798,77 @@ var functions = function functions() {
 };
 
 exports.functions = functions;
+},{}],"js/objects.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.objects = void 0;
+
+var objects = function objects() {
+  // Создать объект, описывающий автомобиль (производитель, модель, год выпуска, средняя скорость), и следующие функции для работы с этим объектом:
+  //Функция для вывода на экран информации об автомобиле;
+  //Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
+  document.getElementById("car").onclick = function car() {
+    var manufacturer = prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044F \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F", "");
+    var model = prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043C\u043E\u0434\u0435\u043B\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F", "");
+    var yearOfManufacture = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0433\u043E\u0434 \u0432\u044B\u043F\u0443\u0441\u043A\u0430 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F", 2019);
+    var averageSpeed = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u0440\u0435\u0434\u043D\u044E\u044E \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F", 200);
+    var distance = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0440\u0430\u0441\u0441\u0442\u043E\u044F\u043D\u0438\u0435, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043F\u0440\u0435\u043E\u0434\u043E\u043B\u0435\u0442\u044C", 500);
+    var distanceTime = distance / averageSpeed;
+
+    if (distanceTime > 4) {
+      distanceTime = distanceTime + Math.floor(distanceTime / 4);
+    }
+
+    ;
+    var showCarInformation = {
+      manufacturer: "".concat(manufacturer),
+      model: "".concat(model),
+      yearOfManufacture: "".concat(yearOfManufacture),
+      averageSpeed: "".concat(averageSpeed)
+    };
+    alert("\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E\u0431 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435: \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C - ".concat(showCarInformation.manufacturer, " ;\n      \u043C\u043E\u0434\u0435\u043B\u044C - ").concat(showCarInformation.model, ";\n      \u0433\u043E\u0434 \u0432\u044B\u043F\u0443\u0441\u043A\u0430 -  ").concat(showCarInformation.yearOfManufacture, " ;\n      \u0441\u0440\u0435\u0434\u043D\u044F\u044F \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C - ").concat(showCarInformation.averageSpeed, ".\n      \u0414\u043B\u044F \u043F\u0440\u0435\u043E\u0434\u043E\u043B\u0435\u043D\u0438\u044F \u043F\u0435\u0440\u0435\u0434\u0430\u043D\u043D\u043E\u0433\u043E \u0440\u0430\u0441\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u0441\u043E \u0441\u0440\u0435\u0434\u043D\u0435\u0439 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C\u044E \u043F\u043E\u043D\u0430\u0434\u043E\u0431\u0438\u0442\u0441\u044F ").concat(distanceTime, " \u0447\u0430\u0441\u043E\u0432."));
+  }; // Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом: <br>
+  //Функция сложения 2-х объектов-дробей;
+  // Функция вычитания 2-х объектов-дробей;
+  //Функция умножения 2-х объектов-дробей;
+  // Функция деления 2-х объектов-дробей;
+  //Функция сокращения объекта-дроби.        
+
+
+  document.getElementById("WorkingWithFractions").onclick = function WorkingWithFractions() {
+    var firstNumerator = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0435\u0440\u0432\u044B\u0439 \u0447\u0438\u0441\u043B\u0438\u0442\u0435\u043B\u044C", 2);
+    var firstDenominator = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0435\u0440\u0432\u044B\u0439 \u0437\u043D\u0430\u043C\u0435\u043D\u0430\u0442\u0435\u043B\u044C", 4);
+    var secondNumerator = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0442\u043E\u0440\u043E\u0439 \u0447\u0438\u0441\u043B\u0438\u0442\u0435\u043B\u044C", 4);
+    var secondDenominator = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0442\u043E\u0440\u043E\u0439 \u0437\u043D\u0430\u043C\u0435\u043D\u0430\u0442\u0435\u043B\u044C", 8);
+    var addingResult = firstNumerator / firstDenominator + secondNumerator / secondDenominator;
+    var subtractionResult = firstNumerator / firstDenominator - secondNumerator / secondDenominator;
+    var multiplicationResult = firstNumerator / firstDenominator * (secondNumerator / secondDenominator);
+    var divisionResult = firstNumerator / firstDenominator / (secondNumerator / secondDenominator);
+    alert("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0441\u043B\u043E\u0436\u0435\u043D\u0438\u044F:".concat(addingResult, "; \u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0432\u044B\u0447\u0438\u0442\u0430\u043D\u0438\u044F: ").concat(subtractionResult, "; \n\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0443\u043C\u043D\u043E\u0436\u0435\u043D\u0438\u044F: ").concat(multiplicationResult, "; \u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0434\u0435\u043B\u0435\u043D\u0438\u044F: ").concat(divisionResult, " . "));
+  }; //Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом: 
+  //Функция вывода времени на экран;
+  //Функция изменения времени на переданное количество секунд;
+  //Функция изменения времени на переданное количество минут;
+  //Функция изменения времени на переданное количество часов. 
+
+
+  document.getElementById("WorkingWithTime").onclick = function WorkingWithTime() {
+    var now = new Date();
+    alert("\u0421\u0435\u0439\u0447\u0430\u0441 ".concat(now, " "));
+    var seconds = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0435\u043A\u0443\u043D\u0434 \u0434\u043B\u044F \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0432\u0440\u0435\u043C\u0435\u043D\u0438", 2);
+    var minutes = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043C\u0438\u043D\u0443\u0442 \u0434\u043B\u044F \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0432\u0440\u0435\u043C\u0435\u043D\u0438", 4);
+    var hours = +prompt("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0447\u0430\u0441\u043E\u0432 \u0434\u043B\u044F \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0432\u0440\u0435\u043C\u0435\u043D\u0438", 4);
+    now.setSeconds(now.getSeconds() + seconds);
+    now.setMinutes(now.getMinutes() + minutes);
+    now.setHours(now.getHours() + hours);
+    alert("\u0415\u0441\u043B\u0438 \u043F\u0440\u0438\u0431\u0430\u0432\u0438\u0442\u044C \u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0435 \u0447\u0430\u0441\u044B, \u043C\u0438\u043D\u0443\u0442\u044B \u0438 \u0441\u0435\u043A\u0443\u043D\u0434\u044B \u0432\u0440\u0435\u043C\u044F \u0431\u0443\u0434\u0435\u0442  ".concat(now));
+  };
+};
+
+exports.objects = objects;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -820,11 +880,14 @@ var _cycles = require("../js/cycles.js");
 
 var _functions = require("../js/functions.js");
 
+var _objects = require("../js/objects.js");
+
 (0, _basics.basics)();
 (0, _types.types)();
 (0, _cycles.cycles)();
 (0, _functions.functions)();
-},{"../js/basics":"js/basics.js","../js/types.js":"js/types.js","../js/cycles.js":"js/cycles.js","../js/functions.js":"js/functions.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _objects.objects)();
+},{"../js/basics":"js/basics.js","../js/types.js":"js/types.js","../js/cycles.js":"js/cycles.js","../js/functions.js":"js/functions.js","../js/objects.js":"js/objects.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
