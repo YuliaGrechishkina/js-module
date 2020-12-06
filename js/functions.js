@@ -80,19 +80,18 @@ export const functions = () => {
                    const yourPerfectNumber = (yourFirstNumber , yourSecondNumber) => {
               let i;
               let sum = 0;  
-              const NumbersArr=[];
-              for (i = yourFirstNumber; i < yourSecondNumber; i++) {
+                           for (i = yourFirstNumber; i < yourSecondNumber; i++) {
                   if ((yourSecondNumber-yourFirstNumber) % i == 0) {
                       sum += i;
                   }
               }
               if (sum === (yourSecondNumber-yourFirstNumber)) {
-                  return true;
+                  alert( `Найдены следующие совершенные числа: ${NumbersArr}`);            
               } 
                   return false;
               }
-    NumbersArr.push(i);
-                   alert( `Найдены следующие совершенные числа: ${NumbersArr}`);            
+  
+                  
                     };*/
 
                

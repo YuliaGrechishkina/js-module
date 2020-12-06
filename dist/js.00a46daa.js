@@ -668,19 +668,17 @@ var functions = function functions() {
               const yourPerfectNumber = (yourFirstNumber , yourSecondNumber) => {
          let i;
          let sum = 0;  
-         const NumbersArr=[];
-         for (i = yourFirstNumber; i < yourSecondNumber; i++) {
+                      for (i = yourFirstNumber; i < yourSecondNumber; i++) {
              if ((yourSecondNumber-yourFirstNumber) % i == 0) {
                  sum += i;
              }
          }
          if (sum === (yourSecondNumber-yourFirstNumber)) {
-             return true;
+             alert( `Найдены следующие совершенные числа: ${NumbersArr}`);            
          } 
              return false;
          }
-  NumbersArr.push(i);
-              alert( `Найдены следующие совершенные числа: ${NumbersArr}`);            
+                 
                };*/
   //Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».
   // Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
@@ -869,6 +867,233 @@ var objects = function objects() {
 };
 
 exports.objects = objects;
+},{}],"js/arrays.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.arrays = void 0;
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var arrays = function arrays() {
+  //Создать массив «Список покупок». 
+  //Каждый элемент массива является объектом, который содержит название продукта, необходимое количество и куплен или нет. 
+  //Написать несколько функций для работы с таким массивом.
+  //Вывод всего списка на экран таким образом, чтобы сначала шли некупленные продукты, а потом – купленные.
+  //Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, 
+  //необходимо увеличивать количество в существующей покупке, а не добавлять новую.
+  //Покупка продукта. Функция принимает название продукта и отмечает его как купленный.
+  document.getElementById("shoppingList").onclick = function shoppingList() {
+    var shoppingList = [{
+      name: "Апельсин",
+      quantity: 4,
+      bought: true
+    }, {
+      name: "Яблоко",
+      quantity: 5,
+      bought: false
+    }, {
+      name: "Арбуз",
+      quantity: 1,
+      bought: false
+    }, {
+      name: "Груша",
+      quantity: 2,
+      bought: true
+    }, {
+      name: "Лимон",
+      quantity: 3,
+      bought: false
+    }];
+
+    function displayingShoppingList(array) {
+      var sortedList = "";
+      array.sort(function (a, b) {
+        return a.bought === b.bought ? 0 : a.bought ? 1 : -1;
+      });
+
+      var _iterator = _createForOfIteratorHelper(array),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var i = _step.value;
+
+          if (i.bought === false) {
+            i.bought = "нужно купить";
+          }
+
+          if (i.bought === true) {
+            i.bought = "куплено";
+          }
+
+          sortedList += "".concat(i.name, ", ").concat(i.quantity, " \u0448\u0442., ").concat(i.bought, "\n");
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return sortedList;
+    }
+
+    alert(displayingShoppingList(shoppingList));
+
+    function addingPurchase(array) {
+      var newPurchase = prompt('Введите название продукта', '');
+      var amount = +prompt('Введите нужное количество', 2);
+      var statusBought = null;
+
+      for (var i = 0; i < array.length; i++) {
+        if (newPurchase === i.name) {
+          statusBought = i;
+        }
+
+        ;
+      }
+
+      ;
+
+      if (statusBought === null) {
+        return shoppingList.push({
+          name: newPurchase,
+          quantity: amount,
+          bought: true
+        });
+      } else {
+        array[Number(statusBought)].quantity -= amount;
+      }
+
+      if (array[Number(statusBought)].quantity <= 0) {
+        return array[Number(statusBought)].bought = true;
+      } else if (array[Number(statusBought)].quantity > 0 && statusBought !== null) {
+        return array[Number(statusBought)].bought += " (".concat(amount, " \u0443\u0436\u0435 \u043A\u0443\u043F\u043B\u0435\u043D\u043E)");
+      }
+    }
+
+    addingPurchase(shoppingList);
+    alert(displayingShoppingList(shoppingList));
+  }; //Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из названия товара, количества и цены за единицу товара. Написать следующие функции:
+  //Распечатка чека на экран;
+  //Подсчет общей суммы покупки;
+  //Получение самой дорогой покупки в чеке;
+  //Подсчет средней стоимости одного товара в чеке.
+
+
+  document.getElementById("checkInTheStore").onclick = function checkInTheStore() {
+    var check = [{
+      name: "Апельсин",
+      quantity: 4,
+      price: 2
+    }, {
+      name: "Яблоко",
+      quantity: 5,
+      price: 3
+    }, {
+      name: "Арбуз",
+      quantity: 1,
+      price: 4
+    }, {
+      name: "Груша",
+      quantity: 2,
+      price: 1
+    }, {
+      name: "Лимон",
+      quantity: 3,
+      price: 2
+    }];
+
+    function displayingCheckInTheStore(array) {
+      var displayingCheck = "";
+
+      var _iterator2 = _createForOfIteratorHelper(array),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var i = _step2.value;
+          displayingCheck += "".concat(i.name, ", ").concat(i.quantity, "\u0448\u0442. : ").concat(i.price, " \u0433\u0440\u043D./\u0448\u0442.\n");
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      return displayingCheck;
+    }
+
+    alert(displayingCheckInTheStore(check));
+
+    function totalPurchase(array) {
+      var displayingCheck = "";
+      var purchase = 0;
+
+      for (var i = 0; i < array.length; i++) {
+        var amount = array[i].quantity * array[i].price;
+        displayingCheck += "".concat(array[i].name, " * ").concat(array[i].quantity, "\u0448\u0442. = ").concat(amount, " \u0433\u0440\u043D.\n");
+        purchase += array[i].quantity * array[i].price;
+      }
+
+      displayingCheck += "\u0412\u0441\u0435\u0433\u043E: ".concat(purchase, "\u0433\u0440\u043D.");
+      return displayingCheck;
+    }
+
+    alert("\u041E\u0431\u0449\u0430\u044F \u0441\u0443\u043C\u043C\u0430 \u043F\u043E\u043A\u0443\u043F\u043A\u0438 \u0432 \u0447\u0435\u043A\u0435:\n".concat(totalPurchase(check)));
+
+    function theMostExpensivePurchase(array) {
+      var displayingCheck = "";
+      var purchase = 0;
+      var theMostExpensive = array[0];
+
+      for (var i = 0; i < array.length; i++) {
+        var amount = array[i].quantity * array[i].price;
+        displayingCheck += "".concat(array[i].name, " * ").concat(array[i].quantity, "\u0448\u0442. = ").concat(amount, " \u0433\u0440\u043D.\n");
+        purchase += array[i].quantity * array[i].price;
+
+        if (array[i].price * array[i].quantity > theMostExpensive.price * theMostExpensive.quantity) {
+          theMostExpensive = array[i];
+        }
+      }
+
+      displayingCheck += "\u0412\u0441\u0435\u0433\u043E: ".concat(purchase, "\u0433\u0440\u043D.\n");
+      displayingCheck += "\u0421\u0430\u043C\u0430\u044F \u0434\u043E\u0440\u043E\u0433\u0430\u044F \u043F\u043E\u043A\u0443\u043F\u043A\u0430: ".concat(theMostExpensive.name, " - ").concat(theMostExpensive.quantity * theMostExpensive.price, "\u0433\u0440\u043D.\n");
+      return displayingCheck;
+    }
+
+    alert(theMostExpensivePurchase(check));
+
+    function averageCostProduct(array) {
+      var displayingCheck = "";
+      var purchase = 0;
+      var totalQuantity = 0;
+      var averageCost = 0;
+
+      for (var i = 0; i < array.length; i++) {
+        var amount = array[i].quantity * array[i].price;
+        displayingCheck += "".concat(array[i].name, " * ").concat(array[i].quantity, "\u0448\u0442. = ").concat(amount, " \u0433\u0440\u043D.\n");
+        purchase += array[i].quantity * array[i].price;
+        totalQuantity += array[i].quantity;
+        averageCost = purchase / totalQuantity;
+      }
+
+      displayingCheck += "\u0412\u0441\u0435\u0433\u043E: ".concat(purchase, "\u0433\u0440\u043D.\n");
+      displayingCheck += "\u0421\u0440\u0435\u0434\u043D\u044F\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0442\u043E\u0432\u0430\u0440\u0430 \u0432 \u0447\u0435\u043A\u0435: ".concat(averageCost, "\u0433\u0440\u043D.\n");
+      return displayingCheck;
+    }
+
+    alert(averageCostProduct(check));
+  };
+};
+
+exports.arrays = arrays;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -882,12 +1107,15 @@ var _functions = require("../js/functions.js");
 
 var _objects = require("../js/objects.js");
 
+var _arrays = require("../js/arrays.js");
+
 (0, _basics.basics)();
 (0, _types.types)();
 (0, _cycles.cycles)();
 (0, _functions.functions)();
 (0, _objects.objects)();
-},{"../js/basics":"js/basics.js","../js/types.js":"js/types.js","../js/cycles.js":"js/cycles.js","../js/functions.js":"js/functions.js","../js/objects.js":"js/objects.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _arrays.arrays)();
+},{"../js/basics":"js/basics.js","../js/types.js":"js/types.js","../js/cycles.js":"js/cycles.js","../js/functions.js":"js/functions.js","../js/objects.js":"js/objects.js","../js/arrays.js":"js/arrays.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -915,7 +1143,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54226" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54740" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

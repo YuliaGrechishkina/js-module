@@ -12,3 +12,6 @@ functions();
 
 import { objects } from "../js/objects.js";
 objects();
+
+import { arrays } from "../js/arrays.js";
+arrays();

@@ -10,11 +10,11 @@ body {
   min-height: 100vh;
   font-size: 100%;
   font-size: 14px;
-  color: #c5d6c2;
+  color: #2e3131;
 }
 
 .js-homework {
-  background-image: url(/unnamed.53fdf21a.gif);
+  background-image: url(/591.b4e0ec49.gif);
   background-position: center center;
   background-size: contain;
   padding: 50px 30px 50px 30px;
@@ -36,18 +36,18 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
-  color: #c5d6c2;
-  border: #c5d6c2 solid 2px;
+  color: #2e3131;
+  border: #2e3131 solid 2px;
   padding: 5px;
   cursor: pointer;
-  background-color: #0c6307;
-  width: 250px;
+  background-color: orangered;
+  width: 200px;
   text-align: center;
   font-weight: bold;
 }
 
 a:hover {
-  background-color: #109306;
+  background-color: #f87242;
 }
 
 .js-module {
@@ -60,15 +60,17 @@ ul {
 
 ul li {
   list-style: none;
-  background-color: rgba(12, 99, 7, 0.5);
+  background-color: rgba(149, 165, 166, 0.5);
 }
 
 h2 {
   margin-bottom: 15px;
+  text-transform: uppercase;
+  color: orangered;
 }
 
 li {
-  border: 2px solid #c5d6c2;
+  border: 2px solid #2e3131;
   margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
@@ -81,15 +83,15 @@ li {
 button {
   height: 55px;
   width: 100px;
-  background-color: #109306;
-  color: #c5d6c2;
+  background-color: rgba(46, 49, 49, 0.5);
+  color: #2e3131;
   cursor: pointer;
   padding: 2px;
-  border: #c5d6c2 solid 2px;
+  border: #2e3131 solid 2px;
 }
 
 button:hover {
-  background-color: #0c6307;
+  background-color: orangered;
 }
 
 /*# sourceMappingURL=/style.ff1c4cab.css.map */
