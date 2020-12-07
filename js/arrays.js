@@ -164,9 +164,7 @@ alert(theMostExpensivePurchase(check));
 function averageCostProduct(array) {
    let displayingCheck = "";
     let purchase = 0;
-   // let totalQuantity = 0;
-    let averageCost = 0;
-    for (let i = 0; i < array.length; i++) {
+     for (let i = 0; i < array.length; i++) {
         let amount = array[i].quantity * array[i].price;
         displayingCheck += `${array[i].name} * ${array[i].quantity}шт. = ${amount} грн.\n`;
         purchase += array[i].quantity * array[i].price;

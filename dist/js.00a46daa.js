@@ -1072,9 +1072,7 @@ var arrays = function arrays() {
 
     function averageCostProduct(array) {
       var displayingCheck = "";
-      var purchase = 0; // let totalQuantity = 0;
-
-      var averageCost = 0;
+      var purchase = 0;
 
       for (var i = 0; i < array.length; i++) {
         var amount = array[i].quantity * array[i].price;
