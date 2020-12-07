@@ -15,3 +15,6 @@ objects();
 
 import { arrays } from "../js/arrays.js";
 arrays();
+
+import { classes } from "../js/classes.js";
+classes();

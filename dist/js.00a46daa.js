@@ -1072,174 +1072,195 @@ var arrays = function arrays() {
 
     function averageCostProduct(array) {
       var displayingCheck = "";
-      var purchase = 0;
-      var totalQuantity = 0;
+      var purchase = 0; // let totalQuantity = 0;
+
       var averageCost = 0;
 
       for (var i = 0; i < array.length; i++) {
         var amount = array[i].quantity * array[i].price;
         displayingCheck += "".concat(array[i].name, " * ").concat(array[i].quantity, "\u0448\u0442. = ").concat(amount, " \u0433\u0440\u043D.\n");
         purchase += array[i].quantity * array[i].price;
-        totalQuantity += array[i].quantity;
-        averageCost = purchase / totalQuantity;
       }
 
       displayingCheck += "\u0412\u0441\u0435\u0433\u043E: ".concat(purchase, "\u0433\u0440\u043D.\n");
-      displayingCheck += "\u0421\u0440\u0435\u0434\u043D\u044F\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0442\u043E\u0432\u0430\u0440\u0430 \u0432 \u0447\u0435\u043A\u0435: ".concat(averageCost, "\u0433\u0440\u043D.\n");
+      displayingCheck += "\u0421\u0440\u0435\u0434\u043D\u044F\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0442\u043E\u0432\u0430\u0440\u0430 \u0432 \u0447\u0435\u043A\u0435: ".concat(check.reduce(function (prev, check) {
+        return prev + check.price;
+      }, 0) / check.length, " \u0433\u0440\u043D.\n");
       return displayingCheck;
     }
 
-    alert(averageCostProduct(check));
-  }; //Создать массив CSS-стилей (цвет, размер шрифта, выравнивание, подчеркивание и т. д.). 
-  //Каждый элемент массива – это объект, состоящий из двух свойств: название стиля и значение стиля. 
-  //Написать функцию, которая принимает массив стилей и текст, и выводит этот текст с помощью document.write() 
-  //в тегах <p></p>, добавив в открывающий тег атрибут style со всеми стилями, перечисленными в массиве.
+    alert(averageCostProduct(check)); //};
+    //Создать массив CSS-стилей (цвет, размер шрифта, выравнивание, подчеркивание и т. д.). 
+    //Каждый элемент массива – это объект, состоящий из двух свойств: название стиля и значение стиля. 
+    //Написать функцию, которая принимает массив стилей и текст, и выводит этот текст с помощью document.write() 
+    //в тегах <p></p>, добавив в открывающий тег атрибут style со всеми стилями, перечисленными в массиве.
 
+    document.getElementById("arrayOfStyles").onclick = function arrayOfStyles() {
+      var cssStyles = [{
+        name: "color",
+        value: "green"
+      }, {
+        name: "font-size",
+        value: "44px"
+      }, {
+        name: "font-weght",
+        value: "900"
+      }, {
+        name: "font-style",
+        value: "italic"
+      }, {
+        name: "text-decoration",
+        value: "underline"
+      }, {
+        name: "text-transform",
+        value: "uppercase"
+      }, {
+        name: "text-align",
+        value: "center"
+      }];
 
-  document.getElementById("arrayOfStyles").onclick = function arrayOfStyles() {
-    var cssStyles = [{
-      name: "color",
-      value: "green"
-    }, {
-      name: "font-size",
-      value: "44px"
-    }, {
-      name: "font-weght",
-      value: "900"
-    }, {
-      name: "font-style",
-      value: "italic"
-    }, {
-      name: "text-decoration",
-      value: "underline"
-    }, {
-      name: "text-transform",
-      value: "uppercase"
-    }, {
-      name: "text-align",
-      value: "center"
-    }];
+      var displayingCssStyles = function displayingCssStyles(array, text) {
+        var addStyle = "<p style=\"";
 
-    var displayingCssStyles = function displayingCssStyles(array, text) {
-      var addStyle = "<p style=\"";
+        var _iterator3 = _createForOfIteratorHelper(array),
+            _step3;
 
-      var _iterator3 = _createForOfIteratorHelper(array),
-          _step3;
-
-      try {
-        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var i = _step3.value;
-          addStyle += "".concat(i.name, ": ").concat(i.value, ";\n");
+        try {
+          for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+            var i = _step3.value;
+            addStyle += "".concat(i.name, ": ").concat(i.value, ";\n");
+          }
+        } catch (err) {
+          _iterator3.e(err);
+        } finally {
+          _iterator3.f();
         }
-      } catch (err) {
-        _iterator3.e(err);
-      } finally {
-        _iterator3.f();
-      }
 
-      addStyle += "\"> ".concat(text, " </p>");
-      document.write(addStyle);
-    };
+        addStyle += "\"> ".concat(text, " </p>");
+        document.write(addStyle);
+      };
 
-    displayingCssStyles(cssStyles, 'Hello, world');
-  }; //Создать массив аудиторий академии. Объект-аудитория состоит из названия, количества посадочных мест (от 10 до 20) и названия факультета, для которого она предназначена. 
-  //Написать несколько функций для работы с ним^
-  //Вывод на экран всех аудиторий;
-  //Вывод на экран аудиторий для указанного факультета;
-  //Вывод на экран только тех аудиторий, которые подходят для переданной группы. Объект-группа состоит из названия, количества студентов и названия факультета;
-  //Функция сортировки аудиторий по количеству мест;
-  //Функция сортировки аудиторий по названию (по алфавиту).
+      displayingCssStyles(cssStyles, 'Hello, world');
+    }; //Создать массив аудиторий академии. Объект-аудитория состоит из названия, количества посадочных мест (от 10 до 20) и названия факультета, для которого она предназначена. 
+    //Написать несколько функций для работы с ним^
+    //Вывод на экран всех аудиторий;
+    //Вывод на экран аудиторий для указанного факультета;
+    //Вывод на экран только тех аудиторий, которые подходят для переданной группы. Объект-группа состоит из названия, количества студентов и названия факультета;
+    //Функция сортировки аудиторий по количеству мест;
+    //Функция сортировки аудиторий по названию (по алфавиту).
 
 
-  document.getElementById("audience").onclick = function audience() {
-    var audienceSeats = [{
-      name: 1,
-      seats: 5,
-      faculty: "Юристы"
-    }, {
-      name: 2,
-      seats: 10,
-      faculty: "Географы"
-    }, {
-      name: 3,
-      seats: 15,
-      faculty: "Биологи"
-    }, {
-      name: 4,
-      seats: 20,
-      faculty: "Математики"
-    }];
+    document.getElementById("audience").onclick = function audience() {
+      var audienceSeats = [{
+        name: 1,
+        seats: 5,
+        faculty: "Юристы"
+      }, {
+        name: 2,
+        seats: 10,
+        faculty: "Географы"
+      }, {
+        name: 3,
+        seats: 15,
+        faculty: "Биологи"
+      }, {
+        name: 4,
+        seats: 20,
+        faculty: "Математики"
+      }];
 
-    var displayingAudiences = function displayingAudiences(array) {
-      var allAudiences = '';
+      var displayingAudiences = function displayingAudiences(array) {
+        var allAudiences = '';
 
-      for (var i in array) {
-        allAudiences += "".concat(array[i].faculty, ": \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u044F ").concat(array[i].name, " , \u043C\u0435\u0441\u0442 ").concat(array[i].seats, "\n");
-      }
+        for (var i in array) {
+          allAudiences += "".concat(array[i].faculty, ": \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u044F ").concat(array[i].name, " , \u043C\u0435\u0441\u0442 ").concat(array[i].seats, "\n");
+        }
 
-      return allAudiences;
-    };
+        return allAudiences;
+      };
 
-    alert(displayingAudiences(audienceSeats));
-    var facultyName = +prompt("Введите число, соответствующее Вашему факультету: 1- Юристы, 2 - Географы, 3 - Биологи, 4 - Математики", "");
-    var yourFacultyAudience = audienceSeats.find(function (item) {
-      return item.name == facultyName;
-    });
-    alert("\u0412\u0430\u0448\u0430 \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u044F:  ".concat(yourFacultyAudience.name));
-
-    var sortingBySeats = function sortingBySeats(array) {
-      array.sort(function (a, b) {
-        return a.seats > b.seats ? 1 : -1;
+      alert(displayingAudiences(audienceSeats));
+      var facultyName = +prompt("Введите число, соответствующее Вашему факультету: 1- Юристы, 2 - Географы, 3 - Биологи, 4 - Математики", "");
+      var yourFacultyAudience = audienceSeats.find(function (item) {
+        return item.name == facultyName;
       });
-      var yourSeats = '';
+      alert("\u0412\u0430\u0448\u0430 \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u044F:  ".concat(yourFacultyAudience.name));
 
-      var _iterator4 = _createForOfIteratorHelper(array),
-          _step4;
+      var sortingBySeats = function sortingBySeats(array) {
+        array.sort(function (a, b) {
+          return a.seats > b.seats ? 1 : -1;
+        });
+        var yourSeats = '';
 
-      try {
-        for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-          var i = _step4.value;
-          yourSeats += "".concat(i.faculty, ": \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u044F  ").concat(i.name, " \u043D\u0430 (").concat(i.seats, " \u043C\u0435\u0441\u0442)\n");
+        var _iterator4 = _createForOfIteratorHelper(array),
+            _step4;
+
+        try {
+          for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+            var i = _step4.value;
+            yourSeats += "".concat(i.faculty, ": \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u044F  ").concat(i.name, " \u043D\u0430 (").concat(i.seats, " \u043C\u0435\u0441\u0442)\n");
+          }
+        } catch (err) {
+          _iterator4.e(err);
+        } finally {
+          _iterator4.f();
         }
-      } catch (err) {
-        _iterator4.e(err);
-      } finally {
-        _iterator4.f();
-      }
 
-      return yourSeats;
-    };
+        return yourSeats;
+      };
 
-    alert(sortingBySeats(audienceSeats));
+      alert(sortingBySeats(audienceSeats));
 
-    var sortingByAudienceName = function sortingByAudienceName(array) {
-      array.sort(function (a, b) {
-        return a.name > b.name ? 1 : -1;
-      });
-      var result = '';
+      var sortingByAudienceName = function sortingByAudienceName(array) {
+        array.sort(function (a, b) {
+          return a.name > b.name ? 1 : -1;
+        });
+        var result = '';
 
-      var _iterator5 = _createForOfIteratorHelper(array),
-          _step5;
+        var _iterator5 = _createForOfIteratorHelper(array),
+            _step5;
 
-      try {
-        for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-          var i = _step5.value;
-          result += "".concat(i.faculty, ": \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u044F - ").concat(i.name, " \u043D\u0430 (").concat(i.seats, " \u043C\u0435\u0441\u0442)\n");
+        try {
+          for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+            var i = _step5.value;
+            result += "".concat(i.faculty, ": \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u044F - ").concat(i.name, " \u043D\u0430 (").concat(i.seats, " \u043C\u0435\u0441\u0442)\n");
+          }
+        } catch (err) {
+          _iterator5.e(err);
+        } finally {
+          _iterator5.f();
         }
-      } catch (err) {
-        _iterator5.e(err);
-      } finally {
-        _iterator5.f();
-      }
 
-      return result;
+        return result;
+      };
+
+      alert(sortingByAudienceName(audienceSeats));
     };
-
-    alert(sortingByAudienceName(audienceSeats));
   };
 };
 
 exports.arrays = arrays;
+},{}],"js/classes.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.classes = void 0;
+
+var classes = function classes() {
+  //Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
+  //поле, хранящее радиус окружности;
+  //get-свойство, возвращающее радиус окружности;
+  //set-свойство, устанавливающее радиус окружности;
+  //get-свойство, возвращающее диаметр окружности;
+  //метод, вычисляющий площадь окружности;
+  //метод, вычисляющий длину окружности.
+  //Продемонстрировать работу свойств и методов. 
+  document.getElementById("circleClass").onclick = function circleClass() {};
+};
+
+exports.classes = classes;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -1255,13 +1276,16 @@ var _objects = require("../js/objects.js");
 
 var _arrays = require("../js/arrays.js");
 
+var _classes = require("../js/classes.js");
+
 (0, _basics.basics)();
 (0, _types.types)();
 (0, _cycles.cycles)();
 (0, _functions.functions)();
 (0, _objects.objects)();
 (0, _arrays.arrays)();
-},{"../js/basics":"js/basics.js","../js/types.js":"js/types.js","../js/cycles.js":"js/cycles.js","../js/functions.js":"js/functions.js","../js/objects.js":"js/objects.js","../js/arrays.js":"js/arrays.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _classes.classes)();
+},{"../js/basics":"js/basics.js","../js/types.js":"js/types.js","../js/cycles.js":"js/cycles.js","../js/functions.js":"js/functions.js","../js/objects.js":"js/objects.js","../js/arrays.js":"js/arrays.js","../js/classes.js":"js/classes.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1289,7 +1313,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54740" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49739" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
