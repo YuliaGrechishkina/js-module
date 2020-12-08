@@ -106,11 +106,9 @@ document.getElementById("markerClass").onclick = function markerClass() {
 //Создать объект класса EmpTable и вывести на экран результат работы метода getHtml().
 document.getElementById("employeeClass").onclick = function employeeClass() { 
   const mainDiv = document.getElementById("content");
-
   const tableDiv = document.createElement("div");
   tableDiv.setAttribute("id", "content__tableDiv");
   tableDiv.className = "content__tableDiv";
-
   const tableTag = document.createElement("table");
   tableTag.setAttribute("id", "content__table");
   tableTag.className = "content__table";
@@ -165,8 +163,8 @@ document.getElementById("employeeClass").onclick = function employeeClass() {
           }
         }
         table.setAttribute("border", "2");
-        table.setAttribute("bordercolor", "brown");
-        table.setAttribute("width", "0%");
+        table.setAttribute("bordercolor", "orangered");
+        table.setAttribute("width", "100%");
         table.setAttribute("style", "margin: auto; background-color: lightgrey; margin-bottom: 30px;");
       }
     }

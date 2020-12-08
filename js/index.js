@@ -18,3 +18,6 @@ arrays();
 
 import { classes } from "../js/classes";
 classes();
+
+import { DOM } from "../js/dom";
+DOM();

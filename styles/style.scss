@@ -41,7 +41,7 @@ a {
     padding: 5px;
     cursor: pointer;
     background-color: orangered;
-    width: 200px;
+    width: 175px;
     text-align: center;
     font-weight: bold;
 }
@@ -92,4 +92,45 @@ button {
 
 button:hover {
     background-color: orangered;
+}
+
+
+
+
+.wrapper{
+    display: none;
+}
+
+.trafficLights {
+    width: 100px;
+    height: 250px;
+    background-color: black;
+border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.circle:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.circle--red {
+    background-color: red;
+}
+
+.circle--yellow {
+    background-color: yellow;
+}
+
+.circle--green {
+    background-color: green;
 }

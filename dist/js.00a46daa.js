@@ -1470,8 +1470,8 @@ var classes = function classes() {
           }
 
           table.setAttribute("border", "2");
-          table.setAttribute("bordercolor", "brown");
-          table.setAttribute("width", "0%");
+          table.setAttribute("bordercolor", "orangered");
+          table.setAttribute("width", "100%");
           table.setAttribute("style", "margin: auto; background-color: lightgrey; margin-bottom: 30px;");
         }
       }]);
@@ -1485,6 +1485,114 @@ var classes = function classes() {
 };
 
 exports.classes = classes;
+},{}],"js/dom.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DOM = void 0;
+
+var DOM = function DOM() {
+  //Создать страницу, которая выводит нумерованный список песен:
+  document.getElementById("listOfSongs").onclick = function listOfSongs() {
+    var playList = [{
+      author: "LED ZEPPELIN",
+      song: "STAIRWAY TO HEAVEN"
+    }, {
+      author: "QUEEN",
+      song: "BOHEMIAN RHAPSODY"
+    }, {
+      author: "LYNYRD SKYNYRD",
+      song: "FREE BIRD"
+    }, {
+      author: "DEEP PURPLE",
+      song: "SMOKE ON THE WATER"
+    }, {
+      author: "JIMI HENDRIX",
+      song: "ALL ALONG THE WATCHTOWER"
+    }, {
+      author: "AC/DC",
+      song: "BACK IN BLACK"
+    }, {
+      author: "QUEEN",
+      song: "WE WILL ROCK YOU"
+    }, {
+      author: "METALLICA",
+      song: "ENTER SANDMAN"
+    }];
+    var ul = document.createElement("ul");
+    ul.style.cssText = 'color: orangered; width: 200px; height: 550px; text-align: center; font-weight: bold; margin-bottom: 5px; ';
+    var mainDiv = document.getElementById("songs");
+    mainDiv.append(ul);
+
+    for (var i in playList) {
+      var li = document.createElement("li");
+      var pBtn = document.createElement("p");
+      pBtn.append(playList[i].author);
+      pBtn.append(" : ");
+      pBtn.append(playList[i].song);
+      li.append(pBtn);
+      ul.append(li);
+    }
+
+    ;
+  }; //Создать HTML-страницу с кнопкой "Открыть" и модальным окном. 
+  //На модальном окне должен быть текст и кнопка "Закрыть". Изначально модальное окно не отображается. 
+  //При клике на кнопку "Открыть" появляется модальное окно, на кнопку "Закрыть" – исчезает.
+
+
+  document.getElementById("modalWindow").onclick = function modalWindow() {
+    var mainDiv = document.getElementById("open");
+    var btn = document.createElement("button");
+    var p = document.createElement("p");
+    p.textContent = "Открыть";
+    btn.append(p);
+    mainDiv.append(btn);
+    btn.addEventListener("click", function () {
+      var div = document.createElement("div");
+      div.setAttribute("id", "modal__div");
+      var p = document.createElement("p");
+      p.textContent = "\u041A\u0430\u043A\u043E\u0439-\u0442\u043E \u0442\u0435\u043A\u0441\u0442, \u043D\u0438\u0447\u0435\u0433\u043E \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u0433\u043E, \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \"\u0417\u0430\u043A\u0440\u044B\u0442\u044C\"";
+      p.style.cssText = 'color: orangered; font-weight: bold; margin-bottom: 5px; ';
+      div.append(p);
+      var innerBtn = document.createElement("button");
+      var innerBtnP = document.createElement("p");
+      innerBtnP.textContent = "Закрыть";
+      innerBtn.append(innerBtnP);
+      div.append(innerBtn);
+      mainDiv.append(div);
+      btn.disabled = true;
+      innerBtn.addEventListener("click", function () {
+        div.remove();
+        btn.disabled = false;
+      });
+    });
+  }; // Создать HTML-страницу со светофором и кнопкой, которая переключает светофор на следующий цвет.
+
+
+  document.getElementById("trafficLight").onclick = function trafficLight() {
+    document.getElementById('showTrafficLight').style.display = "block";
+    var lights = document.querySelector('#lights');
+    var redCircle = document.querySelectorAll('.circle')[0];
+    var yellowCircle = document.querySelectorAll('.circle')[1];
+    var greenCircle = document.querySelectorAll('.circle')[2];
+    lights.addEventListener('click', function () {
+      if (redCircle.classList.contains('circle--red')) {
+        redCircle.classList.remove('circle--red');
+        yellowCircle.classList.add('circle--yellow');
+      } else if (yellowCircle.classList.contains('circle--yellow')) {
+        yellowCircle.classList.remove('circle--yellow');
+        greenCircle.classList.add('circle--green');
+      } else if (greenCircle.classList.contains('circle--green')) {
+        greenCircle.classList.remove('circle--green');
+        redCircle.classList.add('circle--red');
+      }
+    });
+  };
+};
+
+exports.DOM = DOM;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -1502,6 +1610,8 @@ var _arrays = require("../js/arrays");
 
 var _classes = require("../js/classes");
 
+var _dom = require("../js/dom");
+
 (0, _basics.basics)();
 (0, _types.types)();
 (0, _cycles.cycles)();
@@ -1509,7 +1619,8 @@ var _classes = require("../js/classes");
 (0, _objects.objects)();
 (0, _arrays.arrays)();
 (0, _classes.classes)();
-},{"../js/basics":"js/basics.js","../js/types":"js/types.js","../js/cycles":"js/cycles.js","../js/functions":"js/functions.js","../js/objects":"js/objects.js","../js/arrays":"js/arrays.js","../js/classes":"js/classes.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _dom.DOM)();
+},{"../js/basics":"js/basics.js","../js/types":"js/types.js","../js/cycles":"js/cycles.js","../js/functions":"js/functions.js","../js/objects":"js/objects.js","../js/arrays":"js/arrays.js","../js/classes":"js/classes.js","../js/dom":"js/dom.js"}],"../../../../../../Users/user/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
