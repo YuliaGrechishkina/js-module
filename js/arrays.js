@@ -174,7 +174,7 @@ function averageCostProduct(array) {
     return displayingCheck;
    }
 alert(averageCostProduct(check));
-//};
+};
 
 
 //Создать массив CSS-стилей (цвет, размер шрифта, выравнивание, подчеркивание и т. д.). 
@@ -287,6 +287,5 @@ const sortingByAudienceName = (array) => {
     return result;
 }
 alert(sortingByAudienceName(audienceSeats));
-};
 };
 }
