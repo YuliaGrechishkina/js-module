@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  background-image: url(/BG.990ab869.jpg);
+  background-size: cover;
+  font-size: 14px;
+  color: #B7BACD;
+}
+
+#tabs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 7% auto;
+}
+
+#tabs svg {
+  margin-bottom: 15px;
+}
+
+#tabs p {
+  font-size: 16px;
+}
+
+.tab {
+  display: inline-block;
+  height: 115px;
+  width: 200px;
+  background-color: #2b3040;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#content-container {
+  background-color: #212534;
+  min-height: 375px;
+  min-width: 600px;
+  text-align: center;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content {
+  margin-right: 10px;
+}
+
+.content-image {
+  margin-bottom: 10px;
+}
+
+.content-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+}
+
+.content-info_title {
+  font-size: 32px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.content-info_subtitle {
+  font-size: 14px;
+  color: #FDFDFD;
+  margin-bottom: 40px;
+}
+
+.content-info_text {
+  font-size: 14px;
+  color: #B7BACD;
+  text-align: left;
+  max-width: 310px;
+  line-height: 1.6;
+  font-stretch: extra-expanded;
+  margin-bottom: 30px;
+}
+
+.content-raiting_list li {
+  list-style: none;
+  display: inline-block;
+}
+
+.content-raiting_link svg:hover {
+  fill: #FFDD3F;
+  transition: all 0.2s ease;
+}
+
+.content-info_sale {
+  text-transform: uppercase;
+  color: #FEDC3F;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.content-info_price {
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-size: 32px;
+}
+
+.content-info_btb {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 160px;
+  background-color: #13E28D;
+  color: #FFFFFF;
+  font-size: 16px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  border-radius: 2px;
+}
+
+.content-info_btb:hover {
+  background-color: #0ba867;
+  transition: all 0.2s ease;
+}
+
+/*# sourceMappingURL=/tabs.f3f28957.css.map */
